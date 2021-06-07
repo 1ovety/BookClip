@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.ArrayList, com.kh.common.model.vo.Category"%>
+<%
+	ArrayList<Category> list = (ArrayList<Category>)request.getAttribute("list");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,10 +37,9 @@
 					<td width="70">카테고리</td>
 					<td width="500">
 						<select id="category" name="category" >
-							<option value="10">일상</option>
-							<option value="20">정보</option>
-							<option value="30">음식</option>
-							<option value="40">취미</option>
+							<% for( Category c : list ) { %>
+							<option value="<%=c.getCategoryNo()%>"><%= c.getCategoryName() %></option>
+							<% }  %>
 						</select>
 					</td>
 				</tr>

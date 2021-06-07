@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.kh.common.model.service.NoticeService;
 import com.kh.common.model.vo.Category;
 import com.kh.common.model.vo.Notice;
+import com.kh.normalboard.model.service.NBoardService;
 
 /**
  * Servlet implementation class NoticeEnrollController
@@ -42,7 +43,7 @@ HttpSession session = request.getSession();
 			response.sendRedirect(request.getContextPath());
 			
 		} else {
-			ArrayList<Notice> list = new NoticeService().selectNoticeList();
+			ArrayList<Category> list = new NoticeService().selectCategoryList();
 			
 			request.setAttribute("list" , list);
 			request.getRequestDispatcher("views/member/noticeEnrollForm.jsp").forward(request, response);

@@ -21,17 +21,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
-	.table{
-	width: 50%;
+	.normal{
+	width: 900px;
 	align-content: center;
 	}
 	.table>tbody>tr:hover{
 		background: rgb(207, 206, 206);
 		cursor: pointer;
 	}
-	.table{
-	width: 50%;
-	align-content: center;
+	
 </style>
 </head>
 <body>
