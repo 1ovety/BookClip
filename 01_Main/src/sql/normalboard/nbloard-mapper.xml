@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<entry key="selectListCount">
+	SELECT
+		   COUNT(*) COUNT
+      FROM NORMALBOARD
+	 WHERE USER_ADMIN = 'Y'
+	    OR USER_ADMIN = NULL
+	
+	</entry>
+	
+	<entry key="selectList">
+		SELECT *
+		  FROM (
+		        SELECT ROWNUM RNUM, A.*
+		          FROM (
+		                SELECT 
+		                       BOARD_NO
+		                     , CATEGORY_NAME
+		                     , COUNT
+		                     , CREATE_BOARD           
+		                     , NBOARD_TITLE
+		                     , USER_NAME
+                 FROM NORMALBOARD N
+                 JOIN CATEGORY USING(CATEGORY_NO)
+                 JOIN MEMBER ON (USER_NOM = USER_NO)
+                 WHERE N.USER_ADMIN = 'Y'
+                  ORDER
+		                    BY CREATE_BOARD DESC
+		                ) A
+		        )
+		 WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key ="selectCategoryList">
+		 SELECT
+		 		CATEGORY_NO
+		 	  , CATEGORY_NAME
+		   FROM CATEGORY
+	</entry>
+
+</properties>

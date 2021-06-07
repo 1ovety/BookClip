@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<entry key="selectNoticeList">
+			
+			SELECT 
+			       NOTICE_NO
+			     , NOTICE_CATEGORY
+			     , NOTICE_TITLE
+			     , UUSER_NAME
+			     , NOTICE_CREATE
+			 FROM NOTICE N
+			  JOIN CATEGORY USING(CATEGORY_NO)
+			  JOIN MEMBER ON(UUSER_NAME = USER_NO)
+			 WHERE N.USER_ADMIN = 'Y'
+			 ORDER
+			    BY NOTICE_CREATE DESC
+		
+		
+	</entry>
+		<entry key="selectListCount">
+	SELECT
+		   COUNT(*) COUNT
+      FROM NOTICE
+	 WHERE USER_ADMIN = 'Y'
+	    OR USER_ADMIN = NULL
+	
+	</entry>
+	
+	
+	
+	
+	<entry key ="selectCategoryList">
+		 SELECT
+		 		CATEGORY_NO
+		 	  , CATEGORY_NAME
+		   FROM CATEGORY
+	</entry>
+	
+
+
+
+</properties>
