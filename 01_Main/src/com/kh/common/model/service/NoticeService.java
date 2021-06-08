@@ -36,9 +36,9 @@ public class NoticeService{
 
 	public ArrayList<Category> selectCategoryList(){
 		Connection conn = getConnection();
-		ArrayList<Category> list = new NoticeDao().selectCategoryList(conn);
+		ArrayList<Category> clist = new NoticeDao().selectCategoryList(conn);
 		close(conn);
-		return list;
+		return clist;
 	}
 	
 

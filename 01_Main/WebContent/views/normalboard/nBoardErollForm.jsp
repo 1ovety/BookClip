@@ -30,7 +30,7 @@
 	<div class="outer">
 		<br><h2 align="center">자유게시판</h2>
 
-		<form action="" id="enroll-form" method="post">
+		<form action="<%= contextPath %>/insert.bo" id="enroll-form" method="post" enctype="multipart/form-data">
 
 			<table id="normalb" align="center">
 				<tr>

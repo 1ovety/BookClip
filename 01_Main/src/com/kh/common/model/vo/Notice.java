@@ -5,7 +5,7 @@ import java.util.Date;
 public class Notice {
 
 	private int noticeNo;
-	private String noticeCategory;
+	private String categoryNo;
 	private Date noticeCreate;
 	private String uuserName;
 	private String noticeContent;
@@ -17,11 +17,11 @@ public class Notice {
 
 
 
-	public Notice(int noticeNo, String noticeCategory, Date noticeCreate, String uuserName, String noticeContent,
+	public Notice(int noticeNo, String categoryNo, Date noticeCreate, String uuserName, String noticeContent,
 			String noticeTitle) {
 		super();
 		this.noticeNo = noticeNo;
-		this.noticeCategory = noticeCategory;
+		this.categoryNo = categoryNo;
 		this.noticeCreate = noticeCreate;
 		this.uuserName = uuserName;
 		this.noticeContent = noticeContent;
@@ -31,10 +31,10 @@ public class Notice {
 	
 
 
-	public Notice(int noticeNo, String noticeCategory, String uuserName, String noticeTitle, Date noticeCreate) {
+	public Notice(int noticeNo, String categoryNo, String uuserName, String noticeTitle, Date noticeCreate) {
 		super();
 		this.noticeNo = noticeNo;
-		this.noticeCategory = noticeCategory;
+		this.categoryNo = categoryNo;
 		this.noticeTitle = noticeTitle;
 		this.uuserName = uuserName;
 		this.noticeCreate = noticeCreate;
@@ -55,14 +55,14 @@ public class Notice {
 
 
 
-	public String getNoticeCategory() {
-		return noticeCategory;
+	public String getCategoryNo() {
+		return categoryNo;
 	}
 
 
 
-	public void setNoticeCategory(String noticeCategory) {
-		this.noticeCategory = noticeCategory;
+	public void setCategoryNo(String categoryNo) {
+		this.categoryNo = categoryNo;
 	}
 
 
@@ -117,10 +117,13 @@ public class Notice {
 
 	@Override
 	public String toString() {
-		return "Notice [noticeNo=" + noticeNo + ", noticeCategory=" + noticeCategory + ", noticeCreate=" + noticeCreate
+		return "Notice [noticeNo=" + noticeNo + ", categoryNo=" + categoryNo + ", noticeCreate=" + noticeCreate
 				+ ", uuserName=" + uuserName + ", noticeContent=" + noticeContent + ", noticeTitle=" + noticeTitle
 				+ "]";
 	}
 
-	
+
+
+
+
 }

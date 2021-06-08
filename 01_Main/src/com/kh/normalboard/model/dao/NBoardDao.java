@@ -1,5 +1,7 @@
 package com.kh.normalboard.model.dao;
 
+import static com.kh.common.JDBCTemplate.close;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -9,11 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
-import com.kh.normalboard.model.vo.NBoard;
+import com.kh.common.model.vo.Attachment;
 import com.kh.common.model.vo.Category;
 import com.kh.common.model.vo.PageInfo;
-
-import static com.kh.common.JDBCTemplate.*; 
+import com.kh.normalboard.model.vo.NBoard; 
 
 	public class NBoardDao {
 
@@ -94,7 +95,7 @@ import static com.kh.common.JDBCTemplate.*;
 		}
 		
 			public ArrayList<Category> selectCategoryList(Connection conn){
-				ArrayList<Category> list = new ArrayList<>();
+				ArrayList<Category> nlist = new ArrayList<>();
 				PreparedStatement pstmt = null;
 				ResultSet rset = null;
 				String sql = prop.getProperty("selectCategoryList");
@@ -104,7 +105,7 @@ import static com.kh.common.JDBCTemplate.*;
 					rset = pstmt.executeQuery();
 					
 					while (rset.next()) {
-						list.add(new Category(rset.getInt("category_no"),
+						nlist.add(new Category(rset.getInt("category_no"),
 											   rset.getString("category_name")));
 					}
 							
@@ -117,7 +118,56 @@ import static com.kh.common.JDBCTemplate.*;
 					close(pstmt);
 					
 				}
-				 return list ;
+				 return nlist ;
 			}
 		
+			public int insertBoard(Connection conn, NBoard n) {
+				int result = 0;
+				PreparedStatement pstmt = null;
+				String sql = prop.getProperty("insertBoard");
+				
+				try {
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, Integer.parseInt(n.getcategory()));
+					pstmt.setString(2, n.getnBoardTitle());
+					pstmt.setString(3, n.getnBoardContent());
+					pstmt.setInt(4, Integer.parseInt(n.getUserNo()));
+					
+					result = pstmt.executeUpdate();
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally {
+					close (pstmt);
+				}
+				
+				return result;
+				
+				
+			}
+			
+			public int insertAttachment(Connection conn, Attachment at) {
+				
+				int result = 0;
+				PreparedStatement pstmt = null;
+				String sql = prop.getProperty("insertAttachment");
+				
+				try {
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, at.getOriginName());
+					pstmt.setString(2, at.getChangeName());
+					pstmt.setString(3, at.getFilePath());
+					
+					result = pstmt.executeUpdate();
+					
+					} catch (SQLException e) {
+					e.printStackTrace();
+					} finally {
+					   close(pstmt);
+					}
+				 
+					return result;
+				
+				}
+			
 }

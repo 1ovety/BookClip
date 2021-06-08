@@ -2,7 +2,8 @@ package com.kh.normalboard.model.vo;
 
 import java.sql.Date;
 
-public class NBoard {
+
+public class NBoard  {
 
 	private int boardNo;
 	private String categoryNo;
@@ -28,6 +29,16 @@ public class NBoard {
 
 	
 	
+	public NBoard(String categoryNo, String nBoardContent, String nBoardTitle, String userNom) {
+		super();
+		this.categoryNo = categoryNo;
+		this.nBoardTitle = nBoardTitle;
+		this.nBoardContent = nBoardContent;
+		this.userNom = userNom;
+	}
+
+
+
 	public NBoard(int boardNo, String category, int count, Date createBoard, String nBoardTitle, String userNo) {
 		super();
 		this.boardNo = boardNo;
@@ -48,6 +59,12 @@ public class NBoard {
 		this.createBoard = createBoard;
 		this.nBoardTitle = nBoardTitle;
 		this.userNom = userNom;
+	}
+
+
+
+	public NBoard() {
+		// TODO Auto-generated constructor stub
 	}
 
 

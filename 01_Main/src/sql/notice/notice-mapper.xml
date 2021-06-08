@@ -6,7 +6,7 @@
 			
 			SELECT 
 			       NOTICE_NO
-			     , NOTICE_CATEGORY
+			     , CATEGORY_NO
 			     , NOTICE_TITLE
 			     , UUSER_NAME
 			     , NOTICE_CREATE

@@ -41,4 +41,47 @@
 		   FROM CATEGORY
 	</entry>
 
+	<entry key="insertBoard">
+	
+	INSERT
+		  INTO NORMALBOARD
+		  (
+		    BOARD_NO
+		   ,CATEGORY_NO
+		   ,NBOARD_TITLE
+		   ,NBOARD_CTT
+		   ,USER_NOM
+		   )
+		   VALUES
+		   (
+		    SEQ_BNO.NEXTVAL
+		    ,1
+		    ,?
+		    ,?
+		    ,?
+		    ,?
+		    );
+		    
+	
+	</entry>
+	
+	<entry key = "insertAttachment">
+	
+	INSERT
+		  INTO ATTACHMENT
+		  ( 
+		   FILE_NO
+		  ,REF_BNO
+		  ,ORIGIN_NAME
+		  ,CHANGES_NAME
+		  ,FILE_PATH
+		  )
+		  VALUES
+		  ( SEQ_FNO.NEXTVAL
+		  , SEQ_BNO.CURRVAL
+		  , ?
+		  , ?
+		  , ?
+		  )
+	</entry>
 </properties>

@@ -136,7 +136,7 @@
 					<% for (Notice n : list) { %>
 					<tr>
 						<td><%= n.getNoticeNo() %></td>
-						<td><%= n.getNoticeCategory() %>신고</td>
+						<td><%= n.getCategoryNo() %></td>
 						<td><%= n.getNoticeTitle() %></td>
 						<td><%= n.getUuserName() %></td>
 						<td><%= n.getNoticeCreate() %></td>
