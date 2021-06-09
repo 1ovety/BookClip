@@ -13,8 +13,8 @@
  .outer{
 		color: black;
 	}
-	#enroll-form>table{
-  border: 1px solid black;
+ #enroll-form>table{
+  		border: 1px solid black;
  }
  #enroll-form input, #enroll-form textarea{
 		width: 100%;
@@ -30,8 +30,7 @@
 	<div class="outer">
 		<br><h2 align="center">자유게시판</h2>
 
-		<form action="<%= contextPath %>/insert.bo" id="enroll-form" method="post" enctype="multipart/form-data">
-
+			<form action="" id="enroll-form" method="post">
 			<table id="normalb" align="center">
 				<tr>
 					<td width="70">카테고리</td>

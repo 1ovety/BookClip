@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.kh.common.model.service.NoticeService;
 import com.kh.common.model.vo.Category;
 import com.kh.common.model.vo.Notice;
-import com.kh.normalboard.model.service.NBoardService;
+
 
 /**
  * Servlet implementation class NoticeEnrollController
@@ -34,14 +34,14 @@ public class NoticeEnrollController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-HttpSession session = request.getSession();
-		
 	
-			ArrayList<Category> list = new NoticeService().selectCategoryList();
-			
-			request.setAttribute("list" , list);
-			request.getRequestDispatcher("views/member/noticeEnrollForm.jsp").forward(request, response);
+		ArrayList<Notice> list = new NoticeService().selectNoticeList();
+		ArrayList<Category> cList = new NoticeService().selectCategoryNotice();
+		
+		//System.out.println(list);
+		request.setAttribute("list" , list);
+		request.setAttribute("cList", cList);
+		request.getRequestDispatcher("views/member/noticeEnrollForm.jsp").forward(request, response);
 	
 	
 	}

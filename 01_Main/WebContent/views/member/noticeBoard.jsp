@@ -3,6 +3,7 @@
 
 <%
 	ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list");
+
 %>
 <!DOCTYPE html>
 <html>

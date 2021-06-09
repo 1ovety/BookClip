@@ -131,7 +131,7 @@ import com.kh.normalboard.model.vo.NBoard;
 					pstmt.setInt(1, Integer.parseInt(n.getcategory()));
 					pstmt.setString(2, n.getnBoardTitle());
 					pstmt.setString(3, n.getnBoardContent());
-					pstmt.setInt(4, Integer.parseInt(n.getUserNo()));
+					pstmt.setInt(4, Integer.parseInt(n.getUserNom()));
 					
 					result = pstmt.executeUpdate();
 					

@@ -15,7 +15,7 @@ public class NBoard  {
 	private String userNom;
 
 	public NBoard(int boardNo, String category, int count, Date createBoard, String nBoardContent, String nBoardTitle,
-			String userAdmin, String userNo) {
+			String userAdmin, String userNom) {
 		super();
 		this.boardNo = boardNo;
 		this.categoryNo = category;
@@ -24,7 +24,7 @@ public class NBoard  {
 		this.nBoardContent = nBoardContent;
 		this.nBoardTitle = nBoardTitle;
 		this.userAdmin = userAdmin;
-		this.userNom = userNo;
+		this.userNom = userNom;
 	}
 
 	
@@ -39,14 +39,14 @@ public class NBoard  {
 
 
 
-	public NBoard(int boardNo, String category, int count, Date createBoard, String nBoardTitle, String userNo) {
+	public NBoard(int boardNo, String category, int count, Date createBoard, String nBoardTitle, String userNom) {
 		super();
 		this.boardNo = boardNo;
 		this.categoryNo = category;
 		this.count = count;
 		this.createBoard = createBoard;
 		this.nBoardTitle = nBoardTitle;
-		this.userNom = userNo;
+		this.userNom = userNom;
 	}
 	
 
@@ -125,19 +125,19 @@ public class NBoard  {
 		this.userAdmin = userAdmin;
 	}
 
-	public String getUserNo() {
+	public String getUserNom() {
 		return userNom;
 	}
 
-	public void setUserNo(String userNo) {
-		this.userNom = userNo;
+	public void setUserNom(String userNom) {
+		this.userNom = userNom;
 	}
 
 	@Override
 	public String toString() {
 		return "NBoard [boardNo=" + boardNo + ", category=" + categoryNo + ", count=" + count + ", createBoard="
 				+ createBoard + ", nBoardContent=" + nBoardContent + ", nBoardTitle=" + nBoardTitle + ", userAdmin="
-				+ userAdmin + ", userNo=" + userNom + "]";
+				+ userAdmin + ", userNom=" + userNom + "]";
 	}
 	
 	

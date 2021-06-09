@@ -79,7 +79,7 @@
 					<td><%= b.getBoardNo() %></td>
 					<td><%= b.getcategory() %></td>
 					<td><%= b.getnBoardTitle() %></td>
-					<td><%= b.getUserNo() %></td>
+					<td><%= b.getUserNom() %></td>
 					<td><%= b.getCount() %></td>
 					<td><%= b.getCreateBoard() %></td>
 				</tr>

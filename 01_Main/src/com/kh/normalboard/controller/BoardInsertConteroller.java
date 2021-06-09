@@ -50,13 +50,13 @@ public class BoardInsertConteroller extends HttpServlet {
 			String categoryNo = multiRequest.getParameter("category");
 			String nBoardTitle = multiRequest.getParameter("title");
 			String nBoardContent = multiRequest.getParameter("content");
-			String userNom = multiRequest.getParameter("userNo");
+			String userNom = multiRequest.getParameter("userNom");
 
 			NBoard n = new NBoard();
 			n.setcategory(categoryNo);
 			n.setnBoardTitle(nBoardTitle);
 			n.setnBoardContent(nBoardContent);
-			n.setUserNo(userNom);
+			n.setUserNom(userNom);
 			
 			Attachment at = null;
 			

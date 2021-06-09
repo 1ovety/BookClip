@@ -87,18 +87,18 @@ import static com.kh.common.JDBCTemplate.*;
 		
 		
 		
-			public ArrayList<Category> selectCategoryList(Connection conn){
-				ArrayList<Category> clist = new ArrayList<>();
+			public ArrayList<Category> selectCategoryNotice(Connection conn){
+				ArrayList<Category> list = new ArrayList<>();
 				PreparedStatement pstmt = null;
 				ResultSet rset = null;
-				String sql = prop.getProperty("selectCategoryList");
+				String sql = prop.getProperty("selectCategoryNotice");
 			
 				try {
 					pstmt = conn.prepareStatement(sql);
 					rset = pstmt.executeQuery();
 					
 					while (rset.next()) {
-						clist.add(new Category(rset.getInt("category_no"),
+						list.add(new Category(rset.getInt("category_no"),
 											   rset.getString("category_name")));
 					}
 							
@@ -111,7 +111,7 @@ import static com.kh.common.JDBCTemplate.*;
 					close(pstmt);
 					
 				}
-				 return clist ;
+				 return list ;
 			}
 		
 }

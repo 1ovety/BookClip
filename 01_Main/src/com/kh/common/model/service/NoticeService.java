@@ -34,11 +34,11 @@ public class NoticeService{
 	}
 
 
-	public ArrayList<Category> selectCategoryList(){
+	public ArrayList<Category> selectCategoryNotice(){
 		Connection conn = getConnection();
-		ArrayList<Category> clist = new NoticeDao().selectCategoryList(conn);
+		ArrayList<Category> list = new NoticeDao().selectCategoryNotice(conn);
 		close(conn);
-		return clist;
+		return list;
 	}
 	
 

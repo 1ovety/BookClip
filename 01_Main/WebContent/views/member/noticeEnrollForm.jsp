@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.ArrayList, com.kh.common.model.vo.Notice, com.kh.common.model.vo.Category"%>
 <%
-	ArrayList<Category> clist = (ArrayList<Category>)request.getAttribute("clist");
+	ArrayList<Category> cList = (ArrayList<Category>)request.getAttribute("cList");
 %>
 <!DOCTYPE html>
 <html>
@@ -33,7 +33,7 @@
 <body>
 
 	
-	<%@ include file="../member/noticeBoard.jsp" %>
+	<%@ include file="noticeBoard.jsp" %>
 	
 	<% if(loginUser !=null) {%>
 	<div class="noticeouter" align="center">
@@ -45,7 +45,7 @@
 				<td>문의종류</td>
 				<td width="500">
 					<select id="category" name="category" >
-							<% for( Category c : clist ) { %>
+							<% for( Category c : cList ) { %>
 							<option value="<%= c.getCategoryNo() %>"><%= c.getCategoryName() %></option>
 							<% }  %>
 						</select>
