@@ -38,6 +38,7 @@
 	<% if(loginUser !=null) {%>
 	<div class="noticeouter" align="center">
 
+	<form action="<%= contextPath %>/qnawrite.me" id="enroll-form" method="post">
 
 		<table align="center">
 			<tr>
