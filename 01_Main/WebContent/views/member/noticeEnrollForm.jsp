@@ -38,7 +38,6 @@
 	<% if(loginUser !=null) {%>
 	<div class="noticeouter" align="center">
 
-	<form action="" id="enroll-form" method="post">
 
 		<table align="center">
 			<tr>
@@ -46,7 +45,9 @@
 				<td width="500">
 					<select id="category" name="category" >
 							<% for( Category c : cList ) { %>
+							<% if(c.getCategoryNo() > 100 && c.getCategoryNo() < 200 ) {%>
 							<option value="<%= c.getCategoryNo() %>"><%= c.getCategoryName() %></option>
+							<% }  %>
 							<% }  %>
 						</select>
 				</td>
